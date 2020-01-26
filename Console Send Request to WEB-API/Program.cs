@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Web;
+using System.Text;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using System.Web;
+using System.Collections.Generic;
 
 namespace Console_Send_Request_to_WEB_API
 {
@@ -17,7 +17,6 @@ namespace Console_Send_Request_to_WEB_API
 
         public static void Post(MultipartFormDataContent httpContent)
         {
-
             var message = client.PostAsync($"post", httpContent);
             Console.WriteLine(message.Result.ToString());
         }
@@ -50,7 +49,7 @@ namespace Console_Send_Request_to_WEB_API
 
             client.BaseAddress = new Uri("https://localhost:44392/api/values/");
 
-            //   Post("itsWorking!!");
+            //Post("itsWorking!!");
             GetFiles();
             Console.WriteLine("Finish");
             Console.ReadKey();
